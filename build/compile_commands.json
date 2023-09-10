@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/node1/coding/muduo/build",
+  "command": "/usr/bin/g++  -DMymuduo_EXPORTS   -g -std=c++11 -g -fPIC   -o CMakeFiles/Mymuduo.dir/Logger.cpp.o -c /home/node1/coding/muduo/Logger.cpp",
+  "file": "/home/node1/coding/muduo/Logger.cpp"
+},
+{
+  "directory": "/home/node1/coding/muduo/build",
+  "command": "/usr/bin/g++  -DMymuduo_EXPORTS   -g -std=c++11 -g -fPIC   -o CMakeFiles/Mymuduo.dir/Timestamp.cpp.o -c /home/node1/coding/muduo/Timestamp.cpp",
+  "file": "/home/node1/coding/muduo/Timestamp.cpp"
+}
+]
