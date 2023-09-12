@@ -6,13 +6,49 @@
 
 #IncludeRegexTransform: 
 
-/home/node1/coding/muduo/Logger.cpp
-iostream
+/home/node1/coding/muduo/Channel.cpp
+sys/epoll.h
 -
+Channel.h
+/home/node1/coding/muduo/Channel.h
 Logger.h
 /home/node1/coding/muduo/Logger.h
+
+/home/node1/coding/muduo/Channel.h
+functional
+-
+memory
+-
+noncopyable.h
+/home/node1/coding/muduo/noncopyable.h
 Timestamp.h
 /home/node1/coding/muduo/Timestamp.h
+
+/home/node1/coding/muduo/EPollPoller.cpp
+EPollPoller.h
+/home/node1/coding/muduo/EPollPoller.h
+Logger.h
+/home/node1/coding/muduo/Logger.h
+Channel.h
+/home/node1/coding/muduo/Channel.h
+unistd.h
+-
+errno.h
+-
+string.h
+-
+
+/home/node1/coding/muduo/EPollPoller.h
+vector
+-
+sys/epoll.h
+-
+Poller.h
+/home/node1/coding/muduo/Poller.h
+Timestamp.h
+/home/node1/coding/muduo/Timestamp.h
+Channel.h
+/home/node1/coding/muduo/Channel.h
 
 /home/node1/coding/muduo/Logger.h
 string
@@ -20,9 +56,19 @@ string
 noncopyable.h
 /home/node1/coding/muduo/noncopyable.h
 
-/home/node1/coding/muduo/Timestamp.cpp
-time.h
+/home/node1/coding/muduo/Poller.cpp
+Poller.h
+/home/node1/coding/muduo/Poller.h
+Channel.h
+/home/node1/coding/muduo/Channel.h
+
+/home/node1/coding/muduo/Poller.h
+vector
 -
+unordered_map
+-
+noncopyable.h
+/home/node1/coding/muduo/noncopyable.h
 Timestamp.h
 /home/node1/coding/muduo/Timestamp.h
 

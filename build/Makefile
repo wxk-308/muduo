@@ -123,6 +123,141 @@ Mymuduo/fast:
 	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/build
 .PHONY : Mymuduo/fast
 
+Channel.o: Channel.cpp.o
+
+.PHONY : Channel.o
+
+# target to build an object file
+Channel.cpp.o:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/Channel.cpp.o
+.PHONY : Channel.cpp.o
+
+Channel.i: Channel.cpp.i
+
+.PHONY : Channel.i
+
+# target to preprocess a source file
+Channel.cpp.i:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/Channel.cpp.i
+.PHONY : Channel.cpp.i
+
+Channel.s: Channel.cpp.s
+
+.PHONY : Channel.s
+
+# target to generate assembly for a file
+Channel.cpp.s:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/Channel.cpp.s
+.PHONY : Channel.cpp.s
+
+DefaultPoller.o: DefaultPoller.cpp.o
+
+.PHONY : DefaultPoller.o
+
+# target to build an object file
+DefaultPoller.cpp.o:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/DefaultPoller.cpp.o
+.PHONY : DefaultPoller.cpp.o
+
+DefaultPoller.i: DefaultPoller.cpp.i
+
+.PHONY : DefaultPoller.i
+
+# target to preprocess a source file
+DefaultPoller.cpp.i:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/DefaultPoller.cpp.i
+.PHONY : DefaultPoller.cpp.i
+
+DefaultPoller.s: DefaultPoller.cpp.s
+
+.PHONY : DefaultPoller.s
+
+# target to generate assembly for a file
+DefaultPoller.cpp.s:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/DefaultPoller.cpp.s
+.PHONY : DefaultPoller.cpp.s
+
+EPollPoller.o: EPollPoller.cpp.o
+
+.PHONY : EPollPoller.o
+
+# target to build an object file
+EPollPoller.cpp.o:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/EPollPoller.cpp.o
+.PHONY : EPollPoller.cpp.o
+
+EPollPoller.i: EPollPoller.cpp.i
+
+.PHONY : EPollPoller.i
+
+# target to preprocess a source file
+EPollPoller.cpp.i:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/EPollPoller.cpp.i
+.PHONY : EPollPoller.cpp.i
+
+EPollPoller.s: EPollPoller.cpp.s
+
+.PHONY : EPollPoller.s
+
+# target to generate assembly for a file
+EPollPoller.cpp.s:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/EPollPoller.cpp.s
+.PHONY : EPollPoller.cpp.s
+
+EventLoop.o: EventLoop.cpp.o
+
+.PHONY : EventLoop.o
+
+# target to build an object file
+EventLoop.cpp.o:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/EventLoop.cpp.o
+.PHONY : EventLoop.cpp.o
+
+EventLoop.i: EventLoop.cpp.i
+
+.PHONY : EventLoop.i
+
+# target to preprocess a source file
+EventLoop.cpp.i:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/EventLoop.cpp.i
+.PHONY : EventLoop.cpp.i
+
+EventLoop.s: EventLoop.cpp.s
+
+.PHONY : EventLoop.s
+
+# target to generate assembly for a file
+EventLoop.cpp.s:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/EventLoop.cpp.s
+.PHONY : EventLoop.cpp.s
+
+InetAddress.o: InetAddress.cpp.o
+
+.PHONY : InetAddress.o
+
+# target to build an object file
+InetAddress.cpp.o:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/InetAddress.cpp.o
+.PHONY : InetAddress.cpp.o
+
+InetAddress.i: InetAddress.cpp.i
+
+.PHONY : InetAddress.i
+
+# target to preprocess a source file
+InetAddress.cpp.i:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/InetAddress.cpp.i
+.PHONY : InetAddress.cpp.i
+
+InetAddress.s: InetAddress.cpp.s
+
+.PHONY : InetAddress.s
+
+# target to generate assembly for a file
+InetAddress.cpp.s:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/InetAddress.cpp.s
+.PHONY : InetAddress.cpp.s
+
 Logger.o: Logger.cpp.o
 
 .PHONY : Logger.o
@@ -149,6 +284,60 @@ Logger.s: Logger.cpp.s
 Logger.cpp.s:
 	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/Logger.cpp.s
 .PHONY : Logger.cpp.s
+
+Poller.o: Poller.cpp.o
+
+.PHONY : Poller.o
+
+# target to build an object file
+Poller.cpp.o:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/Poller.cpp.o
+.PHONY : Poller.cpp.o
+
+Poller.i: Poller.cpp.i
+
+.PHONY : Poller.i
+
+# target to preprocess a source file
+Poller.cpp.i:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/Poller.cpp.i
+.PHONY : Poller.cpp.i
+
+Poller.s: Poller.cpp.s
+
+.PHONY : Poller.s
+
+# target to generate assembly for a file
+Poller.cpp.s:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/Poller.cpp.s
+.PHONY : Poller.cpp.s
+
+Tcpserver.o: Tcpserver.cpp.o
+
+.PHONY : Tcpserver.o
+
+# target to build an object file
+Tcpserver.cpp.o:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/Tcpserver.cpp.o
+.PHONY : Tcpserver.cpp.o
+
+Tcpserver.i: Tcpserver.cpp.i
+
+.PHONY : Tcpserver.i
+
+# target to preprocess a source file
+Tcpserver.cpp.i:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/Tcpserver.cpp.i
+.PHONY : Tcpserver.cpp.i
+
+Tcpserver.s: Tcpserver.cpp.s
+
+.PHONY : Tcpserver.s
+
+# target to generate assembly for a file
+Tcpserver.cpp.s:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/Tcpserver.cpp.s
+.PHONY : Tcpserver.cpp.s
 
 Timestamp.o: Timestamp.cpp.o
 
@@ -186,9 +375,30 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Mymuduo"
+	@echo "... Channel.o"
+	@echo "... Channel.i"
+	@echo "... Channel.s"
+	@echo "... DefaultPoller.o"
+	@echo "... DefaultPoller.i"
+	@echo "... DefaultPoller.s"
+	@echo "... EPollPoller.o"
+	@echo "... EPollPoller.i"
+	@echo "... EPollPoller.s"
+	@echo "... EventLoop.o"
+	@echo "... EventLoop.i"
+	@echo "... EventLoop.s"
+	@echo "... InetAddress.o"
+	@echo "... InetAddress.i"
+	@echo "... InetAddress.s"
 	@echo "... Logger.o"
 	@echo "... Logger.i"
 	@echo "... Logger.s"
+	@echo "... Poller.o"
+	@echo "... Poller.i"
+	@echo "... Poller.s"
+	@echo "... Tcpserver.o"
+	@echo "... Tcpserver.i"
+	@echo "... Tcpserver.s"
 	@echo "... Timestamp.o"
 	@echo "... Timestamp.i"
 	@echo "... Timestamp.s"
