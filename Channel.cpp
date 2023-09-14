@@ -2,6 +2,7 @@
 
 #include "Channel.h"
 #include "Logger.h"
+#include "EventLoop.h"
 
 const int Channel::kNoneEvent = 0;
 const int Channel::kReadEvent = EPOLLIN | EPOLLPRI; //表示可读事件或紧急可读事件
@@ -23,13 +24,11 @@ void Channel::tie(const std::shared_ptr<void>& obj){
 
 void Channel::update(){
     //通过channel所属的Eventloop，调用poller相应方法，注册fd的events事件（epoll_ctl）
-    //add code ...
-    //loop_->updateChannel(this);
+    loop_->updateChannel(this);
 }
 //在Channel所属的EventLoop中，删除当前的channel
 void Channel::remove(){
-    //add code ...
-    // loop_->removeChannel(this);
+    loop_->removeChannel(this);
 }
 
 void Channel::handleEvent(Timestamp receiveTime){

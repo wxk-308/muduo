@@ -4,11 +4,18 @@
 CMakeFiles/Mymuduo.dir/Channel.cpp.o
  /home/node1/coding/muduo/Channel.cpp
  /home/node1/coding/muduo/Channel.h
+ /home/node1/coding/muduo/CurrentThread.h
+ /home/node1/coding/muduo/EventLoop.h
  /home/node1/coding/muduo/Logger.h
  /home/node1/coding/muduo/Timestamp.h
  /home/node1/coding/muduo/noncopyable.h
+CMakeFiles/Mymuduo.dir/CurrentThread.cpp.o
+ /home/node1/coding/muduo/CurrentThread.cpp
+ /home/node1/coding/muduo/CurrentThread.h
 CMakeFiles/Mymuduo.dir/DefaultPoller.cpp.o
+ /home/node1/coding/muduo/Channel.h
  /home/node1/coding/muduo/DefaultPoller.cpp
+ /home/node1/coding/muduo/EPollPoller.h
  /home/node1/coding/muduo/Poller.h
  /home/node1/coding/muduo/Timestamp.h
  /home/node1/coding/muduo/noncopyable.h
@@ -21,8 +28,14 @@ CMakeFiles/Mymuduo.dir/EPollPoller.cpp.o
  /home/node1/coding/muduo/Timestamp.h
  /home/node1/coding/muduo/noncopyable.h
 CMakeFiles/Mymuduo.dir/EventLoop.cpp.o
+ /home/node1/coding/muduo/Channel.h
+ /home/node1/coding/muduo/CurrentThread.h
  /home/node1/coding/muduo/EventLoop.cpp
  /home/node1/coding/muduo/EventLoop.h
+ /home/node1/coding/muduo/Logger.h
+ /home/node1/coding/muduo/Poller.h
+ /home/node1/coding/muduo/Timestamp.h
+ /home/node1/coding/muduo/noncopyable.h
 CMakeFiles/Mymuduo.dir/InetAddress.cpp.o
  /home/node1/coding/muduo/InetAddress.cpp
  /home/node1/coding/muduo/InetAddress.h

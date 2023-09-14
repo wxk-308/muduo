@@ -6,6 +6,11 @@
 },
 {
   "directory": "/home/node1/coding/muduo/build",
+  "command": "/usr/bin/g++  -DMymuduo_EXPORTS   -g -std=c++11 -g -fPIC   -o CMakeFiles/Mymuduo.dir/CurrentThread.cpp.o -c /home/node1/coding/muduo/CurrentThread.cpp",
+  "file": "/home/node1/coding/muduo/CurrentThread.cpp"
+},
+{
+  "directory": "/home/node1/coding/muduo/build",
   "command": "/usr/bin/g++  -DMymuduo_EXPORTS   -g -std=c++11 -g -fPIC   -o CMakeFiles/Mymuduo.dir/DefaultPoller.cpp.o -c /home/node1/coding/muduo/DefaultPoller.cpp",
   "file": "/home/node1/coding/muduo/DefaultPoller.cpp"
 },

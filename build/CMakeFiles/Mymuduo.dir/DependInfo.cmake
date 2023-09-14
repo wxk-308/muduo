@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/node1/coding/muduo/Channel.cpp" "/home/node1/coding/muduo/build/CMakeFiles/Mymuduo.dir/Channel.cpp.o"
+  "/home/node1/coding/muduo/CurrentThread.cpp" "/home/node1/coding/muduo/build/CMakeFiles/Mymuduo.dir/CurrentThread.cpp.o"
   "/home/node1/coding/muduo/DefaultPoller.cpp" "/home/node1/coding/muduo/build/CMakeFiles/Mymuduo.dir/DefaultPoller.cpp.o"
   "/home/node1/coding/muduo/EPollPoller.cpp" "/home/node1/coding/muduo/build/CMakeFiles/Mymuduo.dir/EPollPoller.cpp.o"
   "/home/node1/coding/muduo/EventLoop.cpp" "/home/node1/coding/muduo/build/CMakeFiles/Mymuduo.dir/EventLoop.cpp.o"
