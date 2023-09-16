@@ -1,6 +1,11 @@
 [
 {
   "directory": "/home/node1/coding/muduo/build",
+  "command": "/usr/bin/g++  -DMymuduo_EXPORTS   -g -std=c++11 -g -fPIC   -o CMakeFiles/Mymuduo.dir/Acceptor.cpp.o -c /home/node1/coding/muduo/Acceptor.cpp",
+  "file": "/home/node1/coding/muduo/Acceptor.cpp"
+},
+{
+  "directory": "/home/node1/coding/muduo/build",
   "command": "/usr/bin/g++  -DMymuduo_EXPORTS   -g -std=c++11 -g -fPIC   -o CMakeFiles/Mymuduo.dir/Channel.cpp.o -c /home/node1/coding/muduo/Channel.cpp",
   "file": "/home/node1/coding/muduo/Channel.cpp"
 },
@@ -26,6 +31,16 @@
 },
 {
   "directory": "/home/node1/coding/muduo/build",
+  "command": "/usr/bin/g++  -DMymuduo_EXPORTS   -g -std=c++11 -g -fPIC   -o CMakeFiles/Mymuduo.dir/EventLoopThread.cpp.o -c /home/node1/coding/muduo/EventLoopThread.cpp",
+  "file": "/home/node1/coding/muduo/EventLoopThread.cpp"
+},
+{
+  "directory": "/home/node1/coding/muduo/build",
+  "command": "/usr/bin/g++  -DMymuduo_EXPORTS   -g -std=c++11 -g -fPIC   -o CMakeFiles/Mymuduo.dir/EventLoopThreadPool.cpp.o -c /home/node1/coding/muduo/EventLoopThreadPool.cpp",
+  "file": "/home/node1/coding/muduo/EventLoopThreadPool.cpp"
+},
+{
+  "directory": "/home/node1/coding/muduo/build",
   "command": "/usr/bin/g++  -DMymuduo_EXPORTS   -g -std=c++11 -g -fPIC   -o CMakeFiles/Mymuduo.dir/InetAddress.cpp.o -c /home/node1/coding/muduo/InetAddress.cpp",
   "file": "/home/node1/coding/muduo/InetAddress.cpp"
 },
@@ -41,8 +56,18 @@
 },
 {
   "directory": "/home/node1/coding/muduo/build",
+  "command": "/usr/bin/g++  -DMymuduo_EXPORTS   -g -std=c++11 -g -fPIC   -o CMakeFiles/Mymuduo.dir/Socket.cpp.o -c /home/node1/coding/muduo/Socket.cpp",
+  "file": "/home/node1/coding/muduo/Socket.cpp"
+},
+{
+  "directory": "/home/node1/coding/muduo/build",
   "command": "/usr/bin/g++  -DMymuduo_EXPORTS   -g -std=c++11 -g -fPIC   -o CMakeFiles/Mymuduo.dir/Tcpserver.cpp.o -c /home/node1/coding/muduo/Tcpserver.cpp",
   "file": "/home/node1/coding/muduo/Tcpserver.cpp"
+},
+{
+  "directory": "/home/node1/coding/muduo/build",
+  "command": "/usr/bin/g++  -DMymuduo_EXPORTS   -g -std=c++11 -g -fPIC   -o CMakeFiles/Mymuduo.dir/Thread.cpp.o -c /home/node1/coding/muduo/Thread.cpp",
+  "file": "/home/node1/coding/muduo/Thread.cpp"
 },
 {
   "directory": "/home/node1/coding/muduo/build",
