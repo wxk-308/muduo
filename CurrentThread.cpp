@@ -1,4 +1,5 @@
 #include "CurrentThread.h"
+#include <sys/syscall.h>
 
 namespace CurrentThead{
     __thread int t_cachedTid = 0;

@@ -10,6 +10,9 @@ CMakeFiles/Mymuduo.dir/Acceptor.cpp.o
  /home/node1/coding/muduo/Socket.h
  /home/node1/coding/muduo/Timestamp.h
  /home/node1/coding/muduo/noncopyable.h
+CMakeFiles/Mymuduo.dir/Buffer.cpp.o
+ /home/node1/coding/muduo/Buffer.cpp
+ /home/node1/coding/muduo/Buffer.h
 CMakeFiles/Mymuduo.dir/Channel.cpp.o
  /home/node1/coding/muduo/Channel.cpp
  /home/node1/coding/muduo/Channel.h
@@ -79,9 +82,35 @@ CMakeFiles/Mymuduo.dir/Socket.cpp.o
  /home/node1/coding/muduo/Socket.cpp
  /home/node1/coding/muduo/Socket.h
  /home/node1/coding/muduo/noncopyable.h
+CMakeFiles/Mymuduo.dir/TcpConnection.cpp.o
+ /home/node1/coding/muduo/Buffer.h
+ /home/node1/coding/muduo/Callbacks.h
+ /home/node1/coding/muduo/Channel.h
+ /home/node1/coding/muduo/CurrentThread.h
+ /home/node1/coding/muduo/EventLoop.h
+ /home/node1/coding/muduo/InetAddress.h
+ /home/node1/coding/muduo/Logger.h
+ /home/node1/coding/muduo/Socket.h
+ /home/node1/coding/muduo/TcpConnection.cpp
+ /home/node1/coding/muduo/TcpConnection.h
+ /home/node1/coding/muduo/Timestamp.h
+ /home/node1/coding/muduo/noncopyable.h
 CMakeFiles/Mymuduo.dir/Tcpserver.cpp.o
+ /home/node1/coding/muduo/Acceptor.h
+ /home/node1/coding/muduo/Buffer.h
+ /home/node1/coding/muduo/Callbacks.h
+ /home/node1/coding/muduo/Channel.h
+ /home/node1/coding/muduo/CurrentThread.h
+ /home/node1/coding/muduo/EventLoop.h
+ /home/node1/coding/muduo/EventLoopThreadPool.h
+ /home/node1/coding/muduo/InetAddress.h
+ /home/node1/coding/muduo/Logger.h
+ /home/node1/coding/muduo/Socket.h
+ /home/node1/coding/muduo/TcpConnection.h
  /home/node1/coding/muduo/TcpServer.h
  /home/node1/coding/muduo/Tcpserver.cpp
+ /home/node1/coding/muduo/Timestamp.h
+ /home/node1/coding/muduo/noncopyable.h
 CMakeFiles/Mymuduo.dir/Thread.cpp.o
  /home/node1/coding/muduo/CurrentThread.h
  /home/node1/coding/muduo/Thread.cpp

@@ -150,6 +150,33 @@ Acceptor.cpp.s:
 	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/Acceptor.cpp.s
 .PHONY : Acceptor.cpp.s
 
+Buffer.o: Buffer.cpp.o
+
+.PHONY : Buffer.o
+
+# target to build an object file
+Buffer.cpp.o:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/Buffer.cpp.o
+.PHONY : Buffer.cpp.o
+
+Buffer.i: Buffer.cpp.i
+
+.PHONY : Buffer.i
+
+# target to preprocess a source file
+Buffer.cpp.i:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/Buffer.cpp.i
+.PHONY : Buffer.cpp.i
+
+Buffer.s: Buffer.cpp.s
+
+.PHONY : Buffer.s
+
+# target to generate assembly for a file
+Buffer.cpp.s:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/Buffer.cpp.s
+.PHONY : Buffer.cpp.s
+
 Channel.o: Channel.cpp.o
 
 .PHONY : Channel.o
@@ -447,6 +474,33 @@ Socket.cpp.s:
 	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/Socket.cpp.s
 .PHONY : Socket.cpp.s
 
+TcpConnection.o: TcpConnection.cpp.o
+
+.PHONY : TcpConnection.o
+
+# target to build an object file
+TcpConnection.cpp.o:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/TcpConnection.cpp.o
+.PHONY : TcpConnection.cpp.o
+
+TcpConnection.i: TcpConnection.cpp.i
+
+.PHONY : TcpConnection.i
+
+# target to preprocess a source file
+TcpConnection.cpp.i:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/TcpConnection.cpp.i
+.PHONY : TcpConnection.cpp.i
+
+TcpConnection.s: TcpConnection.cpp.s
+
+.PHONY : TcpConnection.s
+
+# target to generate assembly for a file
+TcpConnection.cpp.s:
+	$(MAKE) -f CMakeFiles/Mymuduo.dir/build.make CMakeFiles/Mymuduo.dir/TcpConnection.cpp.s
+.PHONY : TcpConnection.cpp.s
+
 Tcpserver.o: Tcpserver.cpp.o
 
 .PHONY : Tcpserver.o
@@ -540,6 +594,9 @@ help:
 	@echo "... Acceptor.o"
 	@echo "... Acceptor.i"
 	@echo "... Acceptor.s"
+	@echo "... Buffer.o"
+	@echo "... Buffer.i"
+	@echo "... Buffer.s"
 	@echo "... Channel.o"
 	@echo "... Channel.i"
 	@echo "... Channel.s"
@@ -573,6 +630,9 @@ help:
 	@echo "... Socket.o"
 	@echo "... Socket.i"
 	@echo "... Socket.s"
+	@echo "... TcpConnection.o"
+	@echo "... TcpConnection.i"
+	@echo "... TcpConnection.s"
 	@echo "... Tcpserver.o"
 	@echo "... Tcpserver.i"
 	@echo "... Tcpserver.s"
