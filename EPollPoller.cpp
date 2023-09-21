@@ -12,7 +12,7 @@
 const int kNew = -1;
 const int kAdded = 1;
 const int kDeleted = 2;
-
+  
 EPollPoller::EPollPoller(EventLoop* loop)
     : Poller(loop),
     epollfd_(::epoll_create1(EPOLL_CLOEXEC)),
@@ -88,13 +88,13 @@ void EPollPoller::removeChannel(Channel* channel) {
     channel->set_index(kNew);
 }
 void EPollPoller::fillActiveChannels(int numEvents, ChannelList* activeChannels) const{
-    for(int i=0; i < numEvents; i++){
+    for(int i=0; i < numEvents; ++i){
         Channel* channel = static_cast<Channel*>(events_[i].data.ptr);
         channel->set_revents(events_[i].events);
         activeChannels->push_back(channel); //EventLoop取得poller发送的发生事件的channel列表
     }
 }
-//更新channel通道 epoll_ctl add/mod/del
+//更新epollpoller中channel通道 epoll_ctl add/mod/de
 void EPollPoller::update(int operation, Channel* channel){
     epoll_event event;
     memset(&event, 0, sizeof(event));

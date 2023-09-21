@@ -1,10 +1,11 @@
 #pragma once
 
+#include <functional>
+
 #include "noncopyable.h"
 #include "Channel.h"
 #include "Socket.h"
 // #include "InetAddress.h"
-#include <functional>
 
 class EventLoop;
 class InetAddress;

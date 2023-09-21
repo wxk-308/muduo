@@ -1,11 +1,11 @@
-#include "Acceptor.h"
-#include "Logger.h"
-#include "InetAddress.h"
-
 #include <sys/types.h>          
 #include <sys/socket.h>
 #include <errno.h>
 #include <unistd.h>
+
+#include "Acceptor.h"
+#include "Logger.h"
+#include "InetAddress.h"
 
 static int createNonblocking(){
     int sockfd = ::socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK | SOCK_CLOEXEC, 0);
@@ -39,7 +39,7 @@ void Acceptor::listen(){
     acceptChannel_.enableReading();
 }
 
-
+//接受新连接，负载均衡分发给subloop
 void Acceptor::handleRead(){
     InetAddress peerAddr;
     int connfd = acceptSocket_.accept(&peerAddr);
@@ -52,7 +52,7 @@ void Acceptor::handleRead(){
     }else{
         LOG_ERROR("%s:%s:%d accept err:%d \n", __FILE__, __FUNCTION__, __LINE__, errno);
         if(errno == EMFILE){ //没有资源分配fd
-            LOG_FATAL("%s:%s:%d sockfd reached err:%d \n", __FILE__, __FUNCTION__, __LINE__, errno);
+            LOG_ERROR("%s:%s:%d sockfd reached err:%d \n", __FILE__, __FUNCTION__, __LINE__, errno);
         }
     }
 }

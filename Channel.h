@@ -45,7 +45,7 @@ public:
     bool isWriting() const { return events_ & kWriteEvent; }
     bool isReading() const { return events_ & kReadEvent; }
 
-    //设置fd相应的事件状态,向poll中注册感兴趣的事件
+    //设置fd相应的事件状态,向poll中注册感兴趣的事件(epoll_ctl)
     void enableReading() { events_ |= kReadEvent; update(); }
     void disableReading() { events_ &= ~kReadEvent; update(); }
     void enableWriting() { events_ |= kWriteEvent; update(); }
@@ -74,7 +74,7 @@ private:
     bool tied_; //标志当前对象是否与其他对象绑定
 
     //channel通道里面能获知fd最终发生的具体事件revents，所以它负责调用具体事件的回调操作
-    ReadEventCallback readCallback_;
+    ReadEventCallback readCallback_; //存放具体自定义的回调函数
     EventCallback writeCallback_;
     EventCallback closeCallback_;
     EventCallback errorCallback_;

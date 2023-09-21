@@ -1,16 +1,14 @@
+#include <functional>
+#include <errno.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/tcp.h>
+
 #include "TcpConnection.h"
 #include "Logger.h"
 #include "Socket.h"
 #include "Channel.h"
 #include "EventLoop.h"
-
-#include <functional>
-#include <errno.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <string.h>
-#include <netinet/tcp.h>
-#include <string>
 
 static EventLoop* CheckLoopNotNull(EventLoop* loop){
     if(loop == nullptr){
@@ -27,7 +25,7 @@ TcpConnection::TcpConnection(EventLoop* loop,
     : loop_(CheckLoopNotNull(loop))
     , name_(nameArg)
     , state_(kConnecting) 
-    , reading_(true)
+    , reading_(true)     
     , socket_(new Socket(sockfd))
     , channel_(new Channel(loop, sockfd))
     , localAddr_(localAddr)
@@ -55,9 +53,10 @@ void TcpConnection::send(const std::string& buf){
         }
     }
 }
+// 应用发送数据到内核，写的太快， 将数据写入缓冲区   并且设置高水位回调函数
 void TcpConnection::sendInLoop(const void* data, size_t len){
     ssize_t nwrote = 0;
-    ssize_t remaining = len;
+    ssize_t remaining = len; //没发送完的数据
     bool faultError = false;
     //之前调用过connection的shutdow，不能再发送
     if(state_ == kDisconnected){

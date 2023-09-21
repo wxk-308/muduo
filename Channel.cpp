@@ -5,8 +5,8 @@
 #include "EventLoop.h"
 
 const int Channel::kNoneEvent = 0;
-const int Channel::kReadEvent = EPOLLIN | EPOLLPRI; //表示可读事件或紧急可读事件
-const int Channel::kWriteEvent = EPOLLOUT; //表示可写事件
+const int Channel::kReadEvent = EPOLLIN | EPOLLPRI; //0x001 0x002 表示可读事件或紧急可读事件
+const int Channel::kWriteEvent = EPOLLOUT; //0x004 表示可写事件
 
 //EventLoop = ChannelList + Poller
 Channel::Channel(EventLoop* loop, int fd) 
@@ -32,9 +32,9 @@ void Channel::remove(){
 }
 
 void Channel::handleEvent(Timestamp receiveTime){
-    std::shared_ptr<void> guard;
+    std::shared_ptr<void> guard = tie_.lock();
     if(tied_){ //如果监听过对象
-        guard = tie_.lock();
+        // guard = tie_.lock();
         if(guard){ //监听的对象是否存在
             handleEventWithGuard(receiveTime);
         }
@@ -44,21 +44,25 @@ void Channel::handleEvent(Timestamp receiveTime){
 }
 
 //根据poller监听到的具体事件，由channel负责调用具体的回调函数
-void Channel::handleEventWithGuard(Timestamp recviveTime){
+void Channel::handleEventWithGuard(Timestamp receiveTime){
     LOG_INFO("Channel handleEvent revents:%d\n", revents_);
     //对端关闭连接或者没有可读事件
     if((revents_ & EPOLLHUP) && !(revents_ & EPOLLIN)){
+        //EPOLLHUP 远程端口关闭或连接被重置 EPOLLIN:文件描述符可读
         //当 closeCallback_ 不为 null 且有可调用的内容时，它可以被调用
         if(closeCallback_)  closeCallback_();
     }
 
     if(revents_ & EPOLLERR){
+        //错误事件
         if(errorCallback_) errorCallback_();
     }
     if(revents_ & (EPOLLIN | EPOLLPRI | EPOLLRDHUP)){
-        if(readCallback_) readCallback_(recviveTime);
+        //分别标识可读；紧急数据处理；连接对端关闭或半关闭连接(如关闭了写仍然可以读取)
+        if(readCallback_) readCallback_(receiveTime);
     }
     if(revents_ & EPOLLOUT){
-        if(writeCallback_) writeCallback_;
+        //文件描述符写就绪事件
+        if(writeCallback_) writeCallback_();
     }
 }

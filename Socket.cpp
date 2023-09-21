@@ -1,12 +1,12 @@
-#include "Socket.h"
-#include "InetAddress.h"
-#include "Logger.h"
-
 #include <unistd.h>
 #include <sys/types.h>          
 #include <sys/socket.h>
 #include <string.h>
 #include <netinet/tcp.h>
+
+#include "Socket.h"
+#include "InetAddress.h"
+#include "Logger.h"
 
 Socket::~Socket(){
     ::close(sockfd_);
@@ -24,9 +24,9 @@ void Socket::listen(){
 }
 int Socket::accept(InetAddress* peeraddr){
     sockaddr_in addr;
-    socklen_t len;
+    socklen_t len = sizeof(addr);
     memset(&addr, 0, sizeof(addr));
-    int connfd = ::accept(sockfd_, (sockaddr*)&addr, &len);
+    int connfd = ::accept4(sockfd_, (sockaddr*)&addr, &len, SOCK_NONBLOCK | SOCK_CLOEXEC);
     if(connfd >= 0 ){
         peeraddr->setSockAddr(addr);
     }

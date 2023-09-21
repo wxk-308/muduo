@@ -1,8 +1,8 @@
+#include <string.h>
+
 #include "TcpServer.h"
 #include "Logger.h"
 #include "TcpConnection.h"
-
-#include <string.h>
 
 static EventLoop* CheckLoopNotNull(EventLoop* loop){
     if(loop == nullptr){

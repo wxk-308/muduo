@@ -1,4 +1,9 @@
 #pragma once
+#include <functional>
+#include <string>
+#include <memory>
+#include <atomic>
+#include <unordered_map>
 
 #include "EventLoop.h"
 #include "Acceptor.h"
@@ -8,13 +13,6 @@
 #include "Callbacks.h"
 #include "Buffer.h"
 #include "TcpConnection.h"
-
-#include <functional>
-#include <string>
-#include <memory>
-#include <atomic>
-#include <unordered_map>
-
 
 //对外服务器编程使用的类
 class TcpServer : noncopyable{
@@ -43,9 +41,12 @@ private:
     void removeConnectionInLoop(const TcpConnectionPtr& conn);
 
     using ConnectionMap = std::unordered_map<std::string, TcpConnectionPtr>;
+    
     EventLoop* loop_; //baseloop
+
     const std::string ipPort_;
     const std::string name_;
+    
     std::unique_ptr<Acceptor> acceptor_;
     std::shared_ptr<EventLoopThreadPool> threadPool_;
 

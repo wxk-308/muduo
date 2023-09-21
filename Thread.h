@@ -1,7 +1,5 @@
 #pragma once
 
-#include "noncopyable.h"
-
 #include <functional>
 #include <memory>
 #include <thread>
@@ -9,11 +7,13 @@
 #include <unistd.h>
 #include <atomic>
 
+#include "noncopyable.h"
+
 class Thread : noncopyable{
 public:
     using ThreadFunc = std::function<void()>;
     //只能使用显式方式调用构造函数
-    explicit Thread(ThreadFunc func, const std::string &name = std::string());
+    explicit Thread(ThreadFunc func, const std::string& name = std::string());
     ~Thread();
 
     void start();

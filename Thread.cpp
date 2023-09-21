@@ -1,7 +1,9 @@
+#include <semaphore.h>
+
 #include "Thread.h"
 #include "CurrentThread.h"
 
-#include <semaphore.h>
+// using namespace CurrentThread;
 
 std::atomic_int Thread::numCreated_(0);
 Thread::Thread(ThreadFunc func, const std::string &name )

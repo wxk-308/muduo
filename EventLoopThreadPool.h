@@ -1,10 +1,10 @@
 #pragma once
-
-#include "noncopyable.h"
 #include <functional>
 #include <string>
 #include <vector>
 #include <memory>
+
+#include "noncopyable.h"
 
 class EventLoop;
 class EventLoopThread;
