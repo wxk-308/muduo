@@ -6,7 +6,7 @@
 // using namespace CurrentThread;
 
 std::atomic_int Thread::numCreated_(0);
-Thread::Thread(ThreadFunc func, const std::string &name )
+Thread::Thread(ThreadFunc func, const std::string& name )
     : started_(false)
     , joined_(false)
     , tid_(0)

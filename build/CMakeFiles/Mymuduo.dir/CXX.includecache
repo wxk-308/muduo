@@ -75,8 +75,6 @@ Timestamp.h
 /home/node1/coding/muduo/Timestamp.h
 
 /home/node1/coding/muduo/CurrentThread.cpp
-sys/syscall.h
--
 CurrentThread.h
 /home/node1/coding/muduo/CurrentThread.h
 
@@ -106,6 +104,8 @@ unistd.h
 errno.h
 -
 string.h
+-
+assert.h
 -
 
 /home/node1/coding/muduo/EPollPoller.h
@@ -200,6 +200,8 @@ noncopyable.h
 
 /home/node1/coding/muduo/InetAddress.cpp
 arpa/inet.h
+-
+strings.h
 -
 string.h
 -

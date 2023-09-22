@@ -8,8 +8,8 @@ Timestamp::Timestamp(int64_t microSecondsSinceEpoch):
     microSecondsSinceEpoch_(microSecondsSinceEpoch){}
 
 Timestamp Timestamp::now(){
-    time_t ti = time(NULL);
-    return Timestamp(ti); // time_t类型可以使用int64_t储存
+    // time_t ti = time(NULL);
+    return Timestamp(time(NULL)); // time_t类型可以使用int64_t储存
 }
 std::string Timestamp::toString() const{
     char buf[128] = {0};

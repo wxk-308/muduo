@@ -32,9 +32,8 @@ void Channel::remove(){
 }
 
 void Channel::handleEvent(Timestamp receiveTime){
-    std::shared_ptr<void> guard = tie_.lock();
     if(tied_){ //如果监听过对象
-        // guard = tie_.lock();
+        std::shared_ptr<void> guard = tie_.lock();
         if(guard){ //监听的对象是否存在
             handleEventWithGuard(receiveTime);
         }
@@ -57,7 +56,7 @@ void Channel::handleEventWithGuard(Timestamp receiveTime){
         //错误事件
         if(errorCallback_) errorCallback_();
     }
-    if(revents_ & (EPOLLIN | EPOLLPRI | EPOLLRDHUP)){
+    if(revents_ & (EPOLLIN | EPOLLPRI)){
         //分别标识可读；紧急数据处理；连接对端关闭或半关闭连接(如关闭了写仍然可以读取)
         if(readCallback_) readCallback_(receiveTime);
     }

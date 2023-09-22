@@ -70,6 +70,7 @@ private:
     int events_; //注册fd感兴趣的事件
     int revents_; //Poller返回的具体发生事件
     int index_; //当前channel添加到poll中的状态
+    
     std::weak_ptr<void> tie_; //跨线程的 对象生存状态的监听
     bool tied_; //标志当前对象是否与其他对象绑定
 
@@ -81,7 +82,7 @@ private:
 
     void update();
     //估计上述中的handleEvent（）是对handleEventWithGuard的封装
-    void handleEventWithGuard(Timestamp recviveTime);
+    void handleEventWithGuard(Timestamp receiveTime);
 };
 
 

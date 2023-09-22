@@ -9,12 +9,12 @@ Logger& Logger::instance(){
 }
 
 void Logger::setLogLevel(int level){
-    loglevel_ = level;
+    logLevel_ = level;
 }
 
 //控制台输出格式【级别信息】 time ：msg
 void Logger::log(std::string msg){
-    switch (loglevel_)
+    switch (logLevel_)
     {
     case INFO:
         std::cout << "[INFO] ";

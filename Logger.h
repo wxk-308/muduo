@@ -55,10 +55,6 @@ enum LogLevel{
 //输出一个日志类（单例模式：确保一个类只有一个实例，并提供全局访问点以访问该实例）
 class Logger : noncopyable
 {
-private:
-    int loglevel_;
-    Logger(){}
-
 public:
     //获取日志的唯一实例对象
     static Logger& instance();
@@ -66,6 +62,10 @@ public:
     void setLogLevel(int level);
     //写日志
     void log(std::string msg);
+
+private:
+    int logLevel_;
+    Logger(){}
 };
 
 

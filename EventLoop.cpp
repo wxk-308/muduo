@@ -32,6 +32,7 @@ EventLoop::EventLoop()
     , poller_(Poller::newDefaultPoller(this))
     , wakeupFd_(createEventfd())
     , wakeupChannel_(new Channel(this, wakeupFd_))
+    , currentActiveChannel_(nullptr)
 {
     LOG_DEBUG("EventLoop created %p in thread %d \n", this, threadId_);
     if(t_loopInThisThread){
@@ -60,10 +61,11 @@ void EventLoop::loop(){
     while(!quit_){
         activeChannels_.clear();
         //监听两类fd，一种client的fd，一种wakeupfd
-        PollerReturnTime_ = poller_->poll(kPollTimeMs, &activeChannels_);
+        pollReturnTime_ = poller_->poll(kPollTimeMs, &activeChannels_);
         for(Channel* channel : activeChannels_){
+            channel->handleEvent(pollReturnTime_);
             //Poller监听哪些channel发生事件，然后上报eventloop，通知channel处理相应事件
-            channel->handleEvent(PollerReturnTime_);
+            // channel->handleEvent(PollerReturnTime_);
         }
         //wakeup subloop后，执行之前mainloop注册的回调函数cb
         doPendingFunctors();
@@ -132,7 +134,7 @@ void EventLoop::doPendingFunctors(){
         std::unique_lock<std::mutex> lock(mutex_);
         functors.swap(pendingFunctors_);
     }
-    for(const Functor &functor : functors){
+    for(const Functor& functor : functors){
         functor();
     }
     callingPendingFunctors_ = false;

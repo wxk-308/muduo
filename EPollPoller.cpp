@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <errno.h>
 #include <string.h>
+#include <assert.h>
 
 //表示channel添加到poller中的状态 
 //分别表示未添加，已添加，已删除
@@ -33,7 +34,7 @@ Timestamp EPollPoller::poll(int timeoutMs, ChannelList* activeChannels) {
     LOG_INFO("Function=%s => fd total count:%lu \n", __FUNCTION__, channels_.size());
     int numEvents = ::epoll_wait(epollfd_, &*events_.begin(), static_cast<int>(events_.size()), timeoutMs);
     int saveErrno = errno;
-    Timestamp now = Timestamp::now();
+    Timestamp now(Timestamp::now());
 
     if(numEvents > 0){ //监听发生事件的fd数量
         LOG_INFO("%d events happened \n", numEvents);
@@ -82,27 +83,35 @@ void EPollPoller::removeChannel(Channel* channel) {
     LOG_INFO("Function=%s => fd=%d \n", __FUNCTION__, fd);
 
     int index = channel->index();
+    // LOG_INFO("Function=%s => fd=%d \n", __FUNCTION__, fd);
+
     if(index == kAdded){ //若channel在poller中注册过，也删除
         update(EPOLL_CTL_DEL, channel);
     }
     channel->set_index(kNew);
 }
 void EPollPoller::fillActiveChannels(int numEvents, ChannelList* activeChannels) const{
+    assert(numEvents <= events_.size());
+    // LOG_INFO("正常1！ \n");
     for(int i=0; i < numEvents; ++i){
+        
         Channel* channel = static_cast<Channel*>(events_[i].data.ptr);
         channel->set_revents(events_[i].events);
+        // LOG_INFO("正常3！ \n");
         activeChannels->push_back(channel); //EventLoop取得poller发送的发生事件的channel列表
     }
+    // LOG_INFO("正常退出 \n");
 }
 //更新epollpoller中channel通道 epoll_ctl add/mod/de
 void EPollPoller::update(int operation, Channel* channel){
     epoll_event event;
-    memset(&event, 0, sizeof(event));
+    bzero(&event, sizeof(event));
+    // memset(&event, 0, sizeof(event));
     int fd = channel->fd(); 
 
     event.events = channel->events();
-    event.data.ptr = channel;   
     event.data.fd = fd;
+    event.data.ptr = channel;   
 
     if(::epoll_ctl(epollfd_, operation, fd, &event) < 0 ){ //ctl出错
         if(operation == EPOLL_CTL_DEL){
